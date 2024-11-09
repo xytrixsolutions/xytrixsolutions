@@ -2,6 +2,7 @@ import React from 'react'
 import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
+import Link from 'next/link';
 
 const page = () => {
   return (
@@ -10,7 +11,7 @@ const page = () => {
         <div className='flex justify-between item-center'>
             <div className='text-3xl font-bold pl-10'><span>IT</span> Skill's</div>
             <ul className='md:flex text-2xl'>
-                <li className='menuLink'><a href="/">Home</a></li>
+                <li className='menuLink'><link href="/">Home</link></li>
             </ul>        
         </div>
       </div>
