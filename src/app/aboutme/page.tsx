@@ -11,7 +11,10 @@ const page = () => {
         <div className='flex justify-between item-center'>
             <div className='text-3xl font-bold pl-10'><span>IT</span> Skills</div>
             <ul className='md:flex text-2xl'>
-                <li className='menuLink'><link href="/">Home</link></li>
+            <li className='menuLink'>
+                <Link href="/">Home</Link>
+            </li>
+
             </ul>        
         </div>
       </div>
