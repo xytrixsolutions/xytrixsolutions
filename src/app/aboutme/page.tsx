@@ -9,7 +9,7 @@ const page = () => {
     <div>
       <div className='container pt-8'>
         <div className='flex justify-between item-center'>
-            <div className='text-3xl font-bold pl-10'><span>IT</span> Skill's</div>
+            <div className='text-3xl font-bold pl-10'><span>IT</span> Skills</div>
             <ul className='md:flex text-2xl'>
                 <li className='menuLink'><link href="/">Home</link></li>
             </ul>        
@@ -18,7 +18,7 @@ const page = () => {
       <div id='about' className='container pt-32'>
       <h2 className='text-4xl md:text-5xl'>About me</h2>
       <p className='text-gray-500 pt-4'>
-      Hi, I'm Ali Khan, an aspiring DevOps enthusiast with a passion for optimizing software development and delivery processes. With a foundational background in cloud technologies, programming, and infrastructure management, I'm eager to dive into real-world projects and contribute to dynamic DevOps environments. My skills span across Linux administration, front-end development, and cloud services like AWS. I'm a quick learner, committed to continuous improvement, and excited about collaborating with teams to deliver efficient and scalable solutions. Let's connect and build something amazing together!
+      Hi, I am Ali Khan, an aspiring DevOps enthusiast with a passion for optimizing software development and delivery processes. With a foundational background in cloud technologies, programming, and infrastructure management, I am eager to dive into real-world projects and contribute to dynamic DevOps environments. My skills span across Linux administration, front-end development, and cloud services like AWS. I am a quick learner, committed to continuous improvement, and excited about collaborating with teams to deliver efficient and scalable solutions. Lets connect and build something amazing together!
       </p>
     </div>
     <div className='space-y-8 pt-20'>
