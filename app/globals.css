@@ -1,26 +1,129 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: 0px;
+  scrollbar-track-color: transparent;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .animate-fade-in {
+    animation: fade-in 1s ease forwards;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .header {
+    @apply w-full z-50 transition-colors duration-300 fixed top-0 left-0 bg-white md:bg-transparent text-black md:text-white;
+  }
+
+  .scroll-past-true {
+    @apply md:bg-white md:text-black shadow-md;
+  }
+  .scroll-past-false {
+    @apply bg-transparent text-white;
+  }
+
+  .header-nav {
+    @apply container mx-auto flex items-center justify-between px-4 py-4;
+  }
+
+  .desktop-links {
+    @apply hidden md:flex items-center space-x-6 font-medium;
+  }
+  .nav-links {
+    @apply block md:inline-block transition-all  duration-200 hover:pl-2 hover:md:scale-125 hover:md:pl-0;
+  }
+  .mobile-links {
+    @apply md:hidden flex flex-col space-y-3 bg-white text-black font-medium p-4;
+  }
+
+  .mobile-toggle-btn {
+    @apply md:hidden text-2xl p-2;
+  }
+
+  .mobile-links.scroll-past-false {
+    @apply bg-transparent backdrop-blur-sm;
+  }
+  /* Glowing text shadow effect */
+  .glow-text {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 30px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Pulse animation for CTA */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-flow {
+  background-size: 200% 200%;
+  animation: gradient-flow 8s ease infinite;
+}
+
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.animate-float1 {
+  animation: float1 6s ease-in-out infinite;
+}
+
+.animate-float2 {
+  animation: float2 4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+@keyframes glow {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.7;
+  }
 }
