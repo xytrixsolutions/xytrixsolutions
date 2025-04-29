@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { JSX, useEffect, useRef } from "react";
 
-export default function Particles() {
+export const Particles = (): JSX.Element => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -38,4 +38,4 @@ export default function Particles() {
   }, []);
 
   return <canvas ref={canvasRef} className="absolute inset-0 z-0" />;
-}
+};

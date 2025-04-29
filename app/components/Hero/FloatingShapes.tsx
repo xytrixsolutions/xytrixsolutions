@@ -1,16 +1,16 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { JSX, useEffect, useRef } from "react";
 
-type Shape = {
+interface Shape {
   x: number;
   y: number;
   size: number;
   velocityX: number;
   velocityY: number;
   color: string;
-};
+}
 
-export default function FloatingShapes() {
+export const FloatingShapes = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const shapesRef = useRef<Shape[]>([]);
   const animationFrameRef = useRef<number>(100);
@@ -71,18 +71,20 @@ export default function FloatingShapes() {
 
   return (
     <div ref={containerRef} className="absolute inset-0">
-      {shapesRef.current.map((shape, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full blur-xl transition-transform duration-300 ease-linear"
-          style={{
-            width: `${shape.size}px`,
-            height: `${shape.size}px`,
-            backgroundColor: shape.color,
-            transform: `translate(${shape.x}px, ${shape.y}px)`,
-          }}
-        />
-      ))}
+      {shapesRef.current.map(
+        (shape: Shape, i: number): JSX.Element => (
+          <div
+            key={i}
+            className="absolute rounded-full blur-xl transition-transform duration-300 ease-linear"
+            style={{
+              width: `${shape.size}px`,
+              height: `${shape.size}px`,
+              backgroundColor: shape.color,
+              transform: `translate(${shape.x}px, ${shape.y}px)`,
+            }}
+          />
+        ),
+      )}
     </div>
   );
-}
+};

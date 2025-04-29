@@ -1,7 +1,8 @@
-import Particles from "./Particles";
-import FloatingShapes from "./FloatingShapes";
+import { Particles } from "./Particles";
+import { FloatingShapes } from "./FloatingShapes";
+import { JSX } from "react";
 
-export default function AnimatedBackground() {
+export const AnimatedBackground = (): JSX.Element => {
   return (
     <div className="relative w-full h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
       <Particles />
@@ -9,4 +10,4 @@ export default function AnimatedBackground() {
       <FloatingShapes />
     </div>
   );
-}
+};

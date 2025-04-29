@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, JSX } from "react";
 import { NavLink, navLinks } from "./Links";
 
-export default function Navbar() {
+export const Navbar = (): JSX.Element => {
   const [scrolledPastHeroMid, setScrolledPastHeroMid] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -55,4 +55,4 @@ export default function Navbar() {
       {menuOpen && <div className="mobile-links">{renderedLinks}</div>}
     </header>
   );
-}
+};
