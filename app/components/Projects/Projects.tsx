@@ -2,29 +2,26 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { Card } from "./Card";
+import { Card, CardProps as Project } from "./Card";
 import { projectData } from "@/data/projects";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { JSX } from "react";
 
-export const Projects = () => {
+export const Projects = (): JSX.Element => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center justify-center py-16" // Changed h-screen to min-h-screen and added padding
+      className="flex flex-col items-center justify-center py-16"
     >
       <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
-
       <div className="w-full max-w-[1400px] h-full px-4">
-        {" "}
-        {/* Added h-full and padding */}
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={24}
           navigation
           pagination={{ clickable: true }}
-          className="!pb-14 h-full" // Added !pb-14 for pagination space and h-full
           breakpoints={{
             320: { slidesPerView: 1 },
             640: { slidesPerView: 1 },
@@ -34,14 +31,16 @@ export const Projects = () => {
           }}
         >
           <style>
-            {`.swiper-slide {
-     height: auto;
-    }`}
+            {`
+                .swiper-slide {
+                    display: flex !important;
+                    height: auto !important;
+                }
+            `}
           </style>
-          {projectData.map((project, index) => (
-            <SwiperSlide key={index}>
-              {" "}
-              {/* Added h-auto */}
+          {projectData.map((project: Project, index) => (
+            // projects.tsx
+            <SwiperSlide key={index} className="flex h-full items-stretch">
               <Card {...project} />
             </SwiperSlide>
           ))}

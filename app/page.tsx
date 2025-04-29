@@ -5,8 +5,9 @@ import { Projects } from "./components/Projects/Projects";
 import { About } from "./components/About/About";
 import { Services } from "./components/Services/Services";
 import { Contact } from "./components/Contact/Contact";
+import { Footer } from "./components/Footer/Footer";
 
-const Home = (): JSX.Element => (
+const XytrixSolutions = (): JSX.Element => (
   <>
     <Navbar />
     <Hero />
@@ -14,7 +15,8 @@ const Home = (): JSX.Element => (
     <Services />
     <Projects />
     <Contact />
+    <Footer />
   </>
 );
 
-export default Home;
+export default XytrixSolutions;
