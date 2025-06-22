@@ -1,5 +1,7 @@
 import { JSX } from "react";
 import { AnimatedBackground } from "./AnimatedBackground";
+import Link from "next/link";
+
 export const Hero = (): JSX.Element => (
   <section id="hero" className="relative w-full -mt-16 pt-16 ">
     <div className="absolute inset-0 flex items-center justify-center text-center p-4 z-10">
@@ -15,9 +17,11 @@ export const Hero = (): JSX.Element => (
         </p>
 
         <div className="opacity-0 animate-fade-in [animation-delay:600ms] translate-y-10">
-          <button className="bg-white/10 backdrop-blur-lg px-8 py-3 rounded-full text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-white/20">
-            Get Started
-          </button>
+          <Link href="#services">
+            <button className="bg-white/30 backdrop-blur-lg px-8 py-3 rounded-full text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-white/20">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </div>

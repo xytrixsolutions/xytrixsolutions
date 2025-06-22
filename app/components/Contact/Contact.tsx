@@ -57,7 +57,7 @@ export const Contact = (): JSX.Element => (
 
       <button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+        className="w-full bg-black border-2 border-black hover:bg-white hover:text-black text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
       >
         Send Message
       </button>

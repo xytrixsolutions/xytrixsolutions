@@ -1,11 +1,11 @@
 import { JSX } from "react";
 
 export const Footer = (): JSX.Element => (
-  <footer className="bg-gray-900 text-gray-300 py-10">
+  <footer className="bg-black text-gray-300 py-10">
     <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
       {/* Brand Info */}
       <div>
-        <h3 className="text-xl font-semibold mb-2">Xytrix</h3>
+        <h3 className="text-xl font-semibold mb-2">Xytrix Solutions</h3>
         <p className="text-sm">
           Building future-ready web and mobile solutions for startups and
           growing businesses.
@@ -49,7 +49,7 @@ export const Footer = (): JSX.Element => (
 
     {/* Bottom Line */}
     <div className="mt-10 text-center text-sm text-gray-500">
-      &copy; {new Date().getFullYear()} Xytrix. All rights reserved.
+      &copy; {new Date().getFullYear()} Xytrix Solutions. All rights reserved.
     </div>
   </footer>
 );

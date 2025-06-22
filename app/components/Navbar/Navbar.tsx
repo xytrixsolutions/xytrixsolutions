@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, JSX } from "react";
 import { NavLink, navLinks } from "./Links";
+import Image from "next/image";
 
 export const Navbar = (): JSX.Element => {
   const [scrolledPastHeroMid, setScrolledPastHeroMid] = useState(false);
@@ -35,9 +36,13 @@ export const Navbar = (): JSX.Element => {
       }`}
     >
       <nav className="header-nav">
-        <div className="text-2xl font-bold">
-          <Link href="/">MyLogo</Link>
-        </div>
+      <div className="text-2xl font-bold flex items-center gap-2">
+  <Link href="/" className="flex items-center gap-2">
+    <Image src="/logo/Group 3.png" alt="Logo" width={92} height={92} />
+    <span className="text-black">Xytrix <span className="text-[#545454]">Solutions</span></span>
+  </Link>
+</div>
+
 
         <div className="desktop-links">{renderedLinks}</div>
 
@@ -52,7 +57,7 @@ export const Navbar = (): JSX.Element => {
         </button>
       </nav>
 
-      {menuOpen && <div className="mobile-links">{renderedLinks}</div>}
+      {menuOpen && <div className="mobile-links backdrop-blur-md bg-transparent">{renderedLinks}</div>}
     </header>
   );
 };

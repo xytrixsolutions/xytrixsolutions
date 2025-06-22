@@ -15,7 +15,8 @@ export const Projects = (): JSX.Element => {
       id="projects"
       className="flex flex-col items-center justify-center py-16"
     >
-      <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
+      <p className="text-sm uppercase text-gray-500">Our Projects</p>
+      <h2 className="text-3xl font-bold mb-12 text-black">Crafted Solutions, Real Impact</h2>
       <div className="w-full max-w-[1400px] h-full px-4">
         <Swiper
           modules={[Navigation, Pagination]}
